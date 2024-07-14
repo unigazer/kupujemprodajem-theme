@@ -1,0 +1,607 @@
+/* ==UserStyle==
+@name         KupujemProdajem Dark/Light Mode
+@description  Noćni/Dnevni režim za e-commerce sajt "KupujemProdajem"
+@namespace    https://github.com/unigazer
+@author       Vladimir Jovanovic <me@vladio.me> (https://vladio.me)
+@homepageURL  https://github.com/unigazer/kupujemprodajem-theme
+@supportURL   https://github.com/unigazer/kupujemprodajem-theme/issues
+@version      1.0.0
+@preprocessor stylus
+@var color    linkColor  "Link color"   #bbb
+@var select		theme "Theme" ["dark:Dark theme", "light:Light theme", "system:System theme"]
+==/UserStyle== */
+@-moz-document url-prefix("https://www.kupujemprodajem.com"),
+url-prefix("") {
+
+	/* Adds */
+	[class*="Banner301_banner301"],
+	[class*="Banner306_banner306"],
+	[class*="Banner311_banner311"] {
+		display: none;
+	}
+
+	/* Main layout (homepage) */
+	[class*="ThreeColumnLayout_content"] {
+		margin-top: 2.5rem;
+
+		& > div {
+			width: 100vw;
+
+			& > div {
+				justify-content: center;
+
+				& > div:nth-child(3) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	[class*="ReviewItem_reviewHolder"] {
+		margin-bottom: 1.5rem;
+	}
+
+	/* Left sidebar */
+	[class*="ThreeColumnLayout_content"] {
+		& > div > div {
+			& > div:nth-child(1) {
+				max-width: calc(11.75% - 13px);
+
+				@media (max-width: 1900px) {
+					max-width: calc(15.75% - 13px);
+				}
+			}
+		}
+	}
+
+	/* Main content */
+	[class*="ThreeColumnLayout_content"] > div > div > div.Grid_col-lg-10__FPLVk.Grid_col-xs__w58_v.Grid_col-sm__DsLxt.Grid_col-md__eg0dB {
+		max-width: 100%;
+		flex-basis: calc(64.5% - 6px);
+	}
+
+	/* Item page */
+	[class*="AdViewInfo_adViewInfoHolder"] {
+		width: 50vw;
+	}
+
+	[class*="AdViewGallery_swipeable"],
+	[class*="AdViewGallery_imageGalleryContent"],
+	[class*="GallerySlideItem_imageGalleryImageCustom"],
+	[class*="GallerySlideList_imageGallerySlidesm"] {
+		height: 75vh;
+	}
+
+	[class*="AdViewInfo_galleryHolder"] {
+		height: 85vh;
+	}
+
+	[class*="Search_cover"] {
+		backdrop-filter: blur(2px);
+	}
+
+	[class*="ReviewThumbButtons"] {
+		font-size: 2rem;
+
+		[class*="ReviewThumbButtons_negative"] {
+			font-weight: 700;
+			animation: pulse-highlight-red 2s infinite;
+
+			@keyframes pulse-highlight-red {
+				0% {
+					-webkit-text-stroke: 0px rgb(255, 48, 64);
+				}
+
+				70% {
+					-webkit-text-stroke: 10px transparent;
+				}
+
+				100% {
+					-webkit-text-stroke: 0px transparent;
+				}
+			}
+		}
+	}
+
+	[class*="ReviewItemBase_commentHolder"],
+	[class*="ReviewItemBase_replyComment"] {
+		font-size: 1.5rem;
+		max-width: 50vw;
+	}
+
+	/* Search results */
+	[class*="AdItem_adOuterHolder"] {
+		margin-bottom: 1.5rem;
+	}
+
+	[class*="SalePartnerItem_info"] {
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	[class*="AdItem_adHolder"] {
+		height: 215px;
+
+		[class^="AdItem_imageHolder"] {
+			width: 300px;
+			height: 200px !important;
+			max-width: 100% !important;
+
+			img {
+				width: 300px !important;
+				height: 200px !important;
+			}
+		}
+	}
+
+	#__next > div > div.ThreeColumnLayout_content__eTm7W > div > div > div.Grid_col-lg-10__FPLVk.Grid_col-xs__w58_v.Grid_col-sm__DsLxt.Grid_col-md__eg0dB > div:nth-child(3) {
+		@media (min-width: 1366px) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: 1rem;
+
+			[class*="AdItem_descriptionHolder"] {
+				flex-direction: column;
+			}
+
+			[class*="AdItem_adInfoHolder"] {
+				width: 100%;
+			}
+
+			article > div > div:nth-child(3) {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+			}
+
+			[class*="AdItem_originAndPromoLocation"] {
+				width: 100%;
+			}
+		}
+	}
+
+	darkStyling() {
+		:root {
+			--dark: #1c1c1c;
+			--darker: #111;
+			--border-color: #2d2d2d;
+			--border-light-color: #ededed;
+			--text-color: #ccc;
+			--text-color-visited: #9f9f9f;
+			--kp-color-content-info: #6fccff;
+			--kp-color-content-accent-secondary: #99cbff;
+			--kp-color-content-regular-secondary: #a1a1a1;
+			--kp-color-fill-poslovi: #3c6407;
+			--kp-color-form-bg-control: var(--darker);
+			--kp-color-border-default: var(--border-color);
+			--kp-color-form-bg-input: var(--dark);
+			--kp-color-form-border-default: var(--border-color);
+			--kp-color-bg-secondary: var(--darker);
+			--kp-color-bg-primary: var(--darker);
+			--kp-color-form-bg-control-hover: #282828;
+			--kp-color-form-bg-selected-alt: #282828;
+			--kp-color-fill-neutral-dim: var(--dark);
+			--kp-color-fill-interactive-secondary: var(--dark);
+			--kp-color-form-bg-disabled: #383838;
+			--kp-color-content-regular-primary: #fff;
+			--kp-color-bg-alert: #6a1b12;
+			--kp-color-bg-info: #0a3146;
+			--kp-color-bg-warning: #725c00;
+			--kp-color-fill-ZO-dim: #544006;
+			--kp-color-content-price: #f00;
+		}
+
+		body {
+			background-color: var(--dark);
+		}
+
+		[class*="Logo_logo"] > svg {
+			filter: grayscale(1) brightness(10);
+		}
+
+		svg:not([class*="Logo_logo"] svg):not([class*="AdAvailableImmediate_adAvailableImmediateHolder"] svg):not([class*="ReviewItemBase_topBoxLeft"] svg):not([class*="Footer_footer"] svg):not([class*="ReviewPageThumbLinks_holder"] svg):not([class*="Button_children"] svg):not(a[aria-label="Postavite oglas"] svg):not([class*="Button_trailing"] svg):not([class*="DeliveryMethodsInfo_deliveryMethodsInfo"] svg):not([class*="AdViewInfoStats_infoStat"] svg):not([class*="AdViewDescription_adDescriptionBottom"] svg):not([class*="Search_searchFilters"] svg):not([class*="CurrencyConverter_selectHolder"] svg):not([class*="Tooltip_root"] svg):not([class*="-indicatorContainer"] svg) {
+			filter: invert() brightness(170%) contrast(120%);
+		}
+
+		p,
+		span,
+		div {
+			color: var(--text-color);
+		}
+
+		/* Main search input */
+		[class*="Input_inputRow"] {
+			& > input {
+				background-color: var(--dark);
+				border: .1rem solid var(--border-color);
+				color: var(--text-color);
+				&:hover,
+				&:focus {
+					background-color: inherit;
+					border: .1rem solid var(--border-color);
+				}
+			}
+		}
+
+		[class*="SuggestionList_suggestionsList"] {
+			background-color: var(--dark);
+			border: 1px solid var(--border-color);
+			box-shadow: rgb(1, 4, 9) 0px 3px 6px 0px;
+
+			[class*="ExactSearchInfo_exactSearch"] {
+				background-color: #705c05;
+			}
+
+			[class*="SuggestionList_activeItem"] {
+				background-color: var(--darker);
+			}
+
+			[class*="SuggestionList_categoryLabel"] > div {
+				border-bottom: 1px solid var(--border-color);
+			}
+		}
+
+		[class*="ButtonSearch_search"] {
+			background-color: #004970;
+		}
+
+		a[aria-label="Postavite oglas"] {
+			background-color: #830f00;
+		}
+
+		/* Main search input - Advanced search */
+		[class^="Search_searchFilters"] {
+			background-color: var(--darker);
+
+			[class*="Grid_row__"] > div > span > div > div > section > div > div {
+				background-color: var(--dark);
+				border-color: var(--border-color);
+			}
+		}
+
+		[class^="Search_animated"] > div {
+			box-shadow: rgb(1, 4, 9) 0px 3px 6px 0px !important;
+
+			[class^="Checkbox_checkmark"] {
+				background-color: var(--dark);
+				border: 1px solid var(--border-color);
+			}
+
+			button:disabled {
+				background-color: var(--dark);
+			}
+		}
+
+		[class*="-indicatorContainer"] {
+			svg {
+				stroke: #fff;
+			}
+		}
+
+		[class*="Link_link__"] {
+			color: linkColor !important;
+		}
+
+		[class*="Header_header"],
+		[class*="Footer_footer"] {
+			background-color: var(--darker);
+			box-shadow: none !important;
+		}
+
+		[class*="Footer_footer"] {
+			background-color: var(--darker);
+			border: 0;
+		}
+
+		[class*="HighlightBox_box"],
+		[class*="Box_box"] {
+			background-color: var(--darker);
+			border: 0;
+			box-shadow: rgb(1, 4, 9) 0px 3px 6px 0px;
+		}
+
+		[class*="Tabs_tabContent"] {
+			background-color: var(--dark);
+			border: 0;
+		}
+
+		[class*="CategoryBox_titleHolder"] {
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		/* Left sidebar */
+		[class*="MyKpMenu_list"] {
+			li:first-child {
+				color: #fff;
+
+				span {
+					color: #fff;
+				}
+			}
+
+			li:hover:not(:first-child) {
+				background-color: var(--dark) !important;
+			}
+
+			[class*="Bubble_bubble"] {
+				background-color: #323232 !important;
+			}
+		}
+
+		[class*="MyKpMenu_separator"] {
+			border-top: 1px solid var(--border-color) !important;
+		}
+
+		[class^="MyKpMenu_isActive"] {
+			background-color: var(--dark);
+			border: 1px solid var(--border-color);
+		}
+
+		[class*="HighlightBox_separator"] {
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		/* Categories - featured */
+		[class*="CategoryHeadlineItem_itemOutter"] p {
+			color: linkColor !important;
+		}
+
+		img[alt^="categoryHeadline"] {
+			filter: invert() brightness(170%) contrast(120%);
+		}
+
+		[class*="CategoryHeadlineItem_itemInner"] {
+			svg {
+				stroke: #fff;
+			}
+		}
+
+		/* Index page - all categories */
+		[class*="IndexPage_content"] {
+			background-color: var(--darker);
+		}
+
+		[class^="CategoryBox_recommended"] {
+			color: var(--kp-color-content-info);
+		}
+
+		/* Item page */
+		[class*="ButtonSpecial_special"],
+		[class*="ButtonExpand_hover"] {
+			background-color: var(--dark);
+		}
+
+		[class*="AdPage_hasBorder"] {
+			border-top: 1px solid var(--border-color) !important;
+		}
+
+		/* Item page - item title */
+		[class*="AdViewInfo_name"] {
+			color: #fff;
+			font-weight: 700;
+		}
+
+		[class*="AdViewInfo_price"] {
+			font-weight: 700;
+		}
+
+		[class*="AdPage_adViewInfoData"] {
+			border-top-color: var(--border-color);
+			border-bottom-color: var(--border-color);
+		}
+
+		[class*="AdViewAdditionalData_hasDivider"],
+		[class*="UserSummary_userSummary"] {
+			border-left-color: var(--border-color) !important;
+		}
+
+		/* Item page - slides */
+		[class*="GallerySlideItem_imageGalleryImageCustom"] {
+			background-color: var(--dark);
+			border: 1px solid var(--border-color);
+		}
+
+		[class*="AdViewGallery_swipeable"] {
+			background: none;
+		}
+
+		[class*="ButtonTertiary_tertiary"] {
+			&:hover {
+				background-color: var(--dark);
+			}
+		}
+
+		/* Item page - reviews */
+		[class*="ReviewItemBase_middleBox"] {
+			p {
+				color: var(--text-color);
+			}
+
+			span {
+				color: #fff;
+				font-weight: 700;
+			}
+		}
+
+		[class*="ReviewItemBase_commentHolder"],
+		[class*="ReviewItemBase_replyComment"] {
+			background-color: var(--dark);
+		}
+
+		[class*="ReviewItemBase_commentHolder"] {
+			&:before {
+				border-right: .6rem solid var(--dark);
+			}
+		}
+
+		[class*="ReviewItemBase_replyComment"] {
+			&:before {
+				border-left: .6rem solid var(--dark);
+			}
+		}
+
+		[class*="UserSummary_userSummaryWideHolder"] {
+			background-color: var(--darker);
+			border: 0;
+
+			h1 {
+				color: var(--text-color);
+			}
+		}
+
+		[class*="ReviewPageThumbLinks_holder"] {
+			background-color: var(--dark);
+			border: 1px solid var(--border-color);
+		}
+
+		[class*="ReviewPageThumbLinks_active"] {
+			background-color: var(--darker) !important;
+		}
+
+		[class*="Tabs_tabList__"] {
+			background-color: var(--dark);
+			border: 0;
+		}
+
+		/* Item page - cars */
+		[class^="CarDescription_carTableItem"] {
+			border-bottom: 1px solid var(--border-color);
+
+			[class^="CarDescription_carTableTitle"] {
+				color: var(--text-color);
+			}
+
+			& > div:last-child {
+				font-weight: 700;
+			}
+		}
+
+		/* Item page - fullscreen slide */
+		[class*="GallerySlideItem_imageGalleryImageModal"] {
+			background-color: var(--dark);
+		}
+
+		[class*="Modal_content"] {
+			background-color: var(--darker);
+		}
+
+		/* Search results */
+		[class^="SearchTagContainer_tags"] {
+			background-color: var(--darker);
+
+			[class*="SearchTag_priceTag"],
+			& > ul > li > section > div > div {
+				background-color: var(--dark);
+				border-color: var(--border-color);
+			}
+		}
+
+		[class*="AdItem_adOuterHolder"] {
+			border: 0;
+			box-shadow: rgb(1, 4, 9) 0px 3px 6px 0px;
+			margin-bottom: 1.5rem;
+
+			[class*="AdItem_adHolder"]:not([class*="AdItem_highlighted"]):is(+ div: not([class*="AdItem_isDisplayGoldHeader"])) {
+				background-color: var(--darker);
+			}
+
+			[class*="AdItem_name"] {
+				color: linkColor;
+			}
+		}
+
+		[class*="AdItem_descriptionHolder"] {
+			p,
+			div {
+				color: var(--text-color);
+			}
+		}
+
+		/* Search results - partner */
+		[class*="CategoryPartner_item"] {
+			background-color: #725c00;
+
+			p {
+				color: #fff
+			}
+
+			[class^="CategoryPartner_callout"] {
+				color: #ffcec8;
+			}
+		}
+
+		/* Search results - golden add */
+		[class*="AdItem_isDisplayGoldHeader"] {
+			border: 1px solid #b5890d !important;
+
+			[class*="AdGoldHeader_goldHeader"] {
+				border: 1px solid #b5890d;
+			}
+		}
+
+		/* Search results - sale partner */
+		[class*="SalePartnerItem_salePartnerHolder"] {
+			article {}
+		}
+
+		/* Messages */
+		[class*="MessageChatBox_chatBox__"] {
+			filter: invert() brightness(170%) contrast(120%);
+			border: 1px solid #dbdbdb;
+
+			div {
+				color: #000;
+			}
+
+			[class*="Message_senderIsOwner"],
+			[class*="Message_senderIsNotOwner"] {
+				background-color: #e3e3e3;
+			}
+
+			[class*="Message_chatBubble"] {
+				filter: drop-shadow(0 1px 2px rgba(227, 227, 227, .2));
+			}
+		}
+
+		/* Following */
+		[class*="AdItem_name"] {
+			color: linkColor;
+		}
+	}
+
+	lightStyling() {
+		body {
+			background-color: #fafafa;
+		}
+
+		[class*="HighlightBox_box"],
+		[class*="Box_box"],
+		[class*="AdItem_adOuterHolder"] {
+			box-shadow: rgba(140, 149, 159, 0.15) 0px 3px 6px 0px;
+		}
+
+		/* Item page - cars */
+		[class^="CarDescription_carTableItem"] {
+			& > div:last-child {
+				font-weight: 700;
+			}
+		}
+	}
+
+	/* Conditions */
+	if theme==dark {
+		darkStyling();
+	}
+	else if theme==light {
+		lightStyling();
+	}
+	else if theme==system {
+		@media (prefers-color-scheme: dark) {
+			darkStyling();
+		}
+
+		@media (prefers-color-scheme: light) {
+			lightStyling();
+		}
+	}
+}

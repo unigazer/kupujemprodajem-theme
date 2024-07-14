@@ -1,0 +1,20 @@
+{
+  "name": "kupujemprodajem-theme",
+  "version": "1.0.0",
+  "description": "Noćni/Dnevni režim za e-commerce platformu KupujemProdajem.com",
+  "main": "kupujemprodajem.user.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unigazer/kupujemprodajem-theme.git"
+  },
+  "keywords": [
+    "kupujemprodajem",
+    "usercss"
+  ],
+  "author": "Vladimir Jovanovic",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/unigazer/kupujemprodajem-theme/issues"
+  },
+  "homepage": "https://github.com/unigazer/kupujemprodajem-theme#readme"
+}
