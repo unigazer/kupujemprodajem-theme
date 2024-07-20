@@ -1,6 +1,6 @@
 {
   "name": "kupujemprodajem-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Noćni/Dnevni režim za e-commerce platformu KupujemProdajem.com",
   "main": "kupujemprodajem.user.css",
   "repository": {
