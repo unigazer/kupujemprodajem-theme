@@ -5,13 +5,13 @@
 @author       Vladimir Jovanovic <me@vladio.me> (https://vladio.me)
 @homepageURL  https://github.com/unigazer/kupujemprodajem-theme
 @supportURL   https://github.com/unigazer/kupujemprodajem-theme/issues
-@version      1.0.0
+@version      1.0.1
 @preprocessor stylus
 @var color    linkColor  "Link color"   #bbb
 @var select		theme "Theme" ["dark:Dark theme", "light:Light theme", "system:System theme"]
 ==/UserStyle== */
 @-moz-document url-prefix("https://www.kupujemprodajem.com"),
-url-prefix("") {
+url-prefix("https://kupujemprodajem.com") {
 
 	/* Adds */
 	[class*="Banner301_banner301"],
